@@ -1,6 +1,5 @@
 import numpy as np
-import norm
-
+from dual_spls import norm
 
 def d_spls_GLC(X, y, ncp, ppnu, indG, gamma, verbose=False):
     if len(gamma) != len(np.unique(indG)):
@@ -111,7 +110,7 @@ def d_spls_GLC(X, y, ncp, ppnu, indG, gamma, verbose=False):
 
 
 import unittest
-import simulate  # Supposé que la fonction d.spls.simulate est définie ici
+from dual_spls import simulate
 
 class TestDSPLS(unittest.TestCase):
 

@@ -33,6 +33,7 @@ def d_spls_ridge(X, y, ncp, ppnu, verbose=True):
     TT = np.zeros((n, ncp))
     Bhat = np.zeros((p, ncp))
     intercept = np.zeros(ncp)
+    zerovar = np.zeros(ncp, dtype=int)
     
     # This example uses a simple ridge-like step in dual-SPLS
     X_def = Xc.copy()
@@ -57,9 +58,11 @@ def d_spls_ridge(X, y, ncp, ppnu, verbose=True):
         L, _, _, _ = lstsq(R, np.eye(ic+1))
         Bhat[:, ic] = WW[:, :ic+1] @ (L @ (TT[:, :ic+1].T @ yc))
         intercept[ic] = ym - Xm @ Bhat[:, ic]
+        zerovar[ic] = np.sum(Bhat[:, ic] == 0)
         if verbose:
             print(f"Ridge: Component {ic+1} computed.")
     
     return {'Xmean': Xm, 'scores': TT, 'loadings': WW, 'Bhat': Bhat,
             'intercept': intercept, 'fitted_values': X @ Bhat + intercept,
+            'zerovar': zerovar,
             'type': 'ridge'}

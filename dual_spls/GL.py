@@ -1,7 +1,32 @@
 
-import GLA
-import GLB 
-import GLC
+import numpy as np
+from scipy.cluster.hierarchy import linkage, fcluster
+from scipy.spatial.distance import squareform
+
+from dual_spls import GLA
+from dual_spls import GLB
+from dual_spls import GLC
+
+
+def cluster_variables_fixed_groups(X, method='ward', n_groups=3):
+
+    # Calcul de la matrice de corrélation entre variables (colonnes)
+    corr = np.corrcoef(X, rowvar=False)
+
+    # Transformation de la corrélation en distance.
+    # Par exemple, distance = 1 - |corrélation|
+    distance = 1 - np.abs(corr)
+
+    # Transformation de la matrice de distance en format condensé
+    condensed_distance = squareform(distance, checks=False)
+    
+    # Clustering hiérarchique
+    Z = linkage(condensed_distance, method=method)
+    
+    # Formation des clusters en fixant le nombre maximum de clusters
+    indG = fcluster(Z, t=n_groups, criterion='maxclust')
+    
+    return indG
 
 def d_spls_GL(X, y, ncp, ppnu, indG, gamma=None, norm="A", verbose=False):
     """

@@ -7,6 +7,7 @@ dual_spls/LS.py
 dual_spls/__init__.py
 dual_spls/calval.py
 dual_spls/cv.py
+dual_spls/elasticnet.py
 dual_spls/lasso.py
 dual_spls/listecal.py
 dual_spls/metric.py
@@ -18,8 +19,8 @@ dual_spls/print_model.py
 dual_spls/ridge.py
 dual_spls/simulate.py
 dual_spls/split.py
-dual_spls/tt.py
 dual_spls/type.py
+dual_spls/unit_tests.py
 dual_spls.egg-info/PKG-INFO
 dual_spls.egg-info/SOURCES.txt
 dual_spls.egg-info/dependency_links.txt

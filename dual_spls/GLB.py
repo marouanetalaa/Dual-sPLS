@@ -106,7 +106,7 @@ def d_spls_GLB(X, y, ncp, ppnu, indG, verbose=False):
 ## test
 
 import unittest
-import simulate  # Supposé que la fonction d.spls.simulate est définie ici
+from dual_spls import simulate
 
 class TestDSPLS(unittest.TestCase):
 
