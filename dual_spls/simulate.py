@@ -71,7 +71,4 @@ def d_spls_simulate(n=200, p=100, nondes=50, sigmaondes=0.05, sigmay=0.5, int_co
         'G': G
     }
 
-# Exemple d'utilisation
-data = d_spls_simulate(n=100, p=[50, 100], nondes=[20, 30], sigmaondes=[0.05, 0.02], sigmay=0.5)
-print(data['X'].shape)
-print(data['y'].shape)
+
