@@ -2,3 +2,4 @@ dual_spls/__pycache__/
 dual_spls/*.pyc
 dual_spls.egg-info
 build/
+dist/
