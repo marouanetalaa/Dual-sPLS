@@ -13,9 +13,7 @@
 
 - **Develop a smooth surrogate for your norm,** often a diagonal or block-diagonal matrix $$Q$$ such that
 
-  $$
-  \Omega(w) \approx w^T Q w.
-  $$
+$$\Omega(w) \approx w^T Q w.$$
 
 - Use a small constant `eps` for numerical stability.
 
@@ -50,3 +48,31 @@
 
 ```
 
+
+## Example Usage
+
+
+```python
+import numpy as np
+
+from dual_spls.plug_norm import ElasticNetNorm, d_spls_generic, mm_dual_norm_generic
+
+
+if __name__ == '__main__':
+    np.random.seed(0)
+    n_samples, n_features = 100, 20
+    X = np.random.randn(n_samples, n_features)
+    y = np.random.randn(n_samples)
+    ncp = 3  # number of latent components
+
+    # --- Example with Elastic Net norm ---
+    enet_norm = ElasticNetNorm(lambda1=0.5, lambda2=0.1)
+    w_enet, dual_val_enet = mm_dual_norm_generic(np.random.randn(n_features), enet_norm, rho=10.0, ppnu=0.8)
+    print("Elastic Net dual update:")
+    print("w =", w_enet)
+    print("Dual value =", dual_val_enet)
+
+    # Run the dual-sPLS procedure with the Elastic Net norm.
+    model = d_spls_generic(X, y, ncp, enet_norm, rho=10.0, ppnu=0.8, verbose=True)
+    print("\nDual-sPLS model output keys:", model.keys())
+```
