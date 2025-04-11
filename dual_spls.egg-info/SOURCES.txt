@@ -14,6 +14,7 @@ dual_spls/metric.py
 dual_spls/norm.py
 dual_spls/plot.py
 dual_spls/pls.py
+dual_spls/plug_norm.py
 dual_spls/predict.py
 dual_spls/print_model.py
 dual_spls/ridge.py

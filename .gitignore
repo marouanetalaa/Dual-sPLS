@@ -1,3 +1,4 @@
-duaal_spls/__pycache__/
-duaal_spls/*.pyc
-duaal_spls.egg-info
+dual_spls/__pycache__/
+dual_spls/*.pyc
+dual_spls.egg-info
+build/
