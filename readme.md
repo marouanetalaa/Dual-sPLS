@@ -76,3 +76,14 @@ if __name__ == '__main__':
     model = d_spls_generic(X, y, ncp, enet_norm, rho=10.0, ppnu=0.8, verbose=True)
     print("\nDual-sPLS model output keys:", model.keys())
 ```
+
+## References
+
+1. **M. Bernardi, M. Stefanucci, and A. Canale.**  
+   *Numerical evaluation of dual norms via the MM algorithm.* Preprint, 2020.
+
+2. **L. Alsouki, L. Duval, C. Marteau, R. El Haddad, and F. Wahl.**  
+   *Dual-sPLS: a family of Dual Sparse Partial Least Squares regressions for feature selection and prediction with tunable sparsity; evaluation on simulated and near-infrared (NIR) data.* Preprint, 2023.
+
+
+
