@@ -80,10 +80,10 @@ if __name__ == '__main__':
 ## References
 
 1. **M. Bernardi, M. Stefanucci, and A. Canale.**  
-   *Numerical evaluation of dual norms via the MM algorithm.* Preprint, 2020.
+   *Numerical evaluation of dual norms via the MM algorithm.* , 2020.
 
 2. **L. Alsouki, L. Duval, C. Marteau, R. El Haddad, and F. Wahl.**  
-   *Dual-sPLS: a family of Dual Sparse Partial Least Squares regressions for feature selection and prediction with tunable sparsity; evaluation on simulated and near-infrared (NIR) data.* Preprint, 2023.
+   *Dual-sPLS: a family of Dual Sparse Partial Least Squares regressions for feature selection and prediction with tunable sparsity; evaluation on simulated and near-infrared (NIR) data.* , 2023.
 
 
 
